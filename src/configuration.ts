@@ -32,6 +32,12 @@ export interface User {
     pathMapping?: string[],
     prefixDir?: string,
     outputFile?: string,
+    exclBrLine?: string,
+    exclBrStart?: string,
+    exclBrStop?: string,
+    exclLine?: string,
+    exclLineStart?: string,
+    exclLineStop?: string,
 }
 
 /**
@@ -127,6 +133,24 @@ async function loadUser(path: string): Promise<User> {
     }
     if (contents['output-file']) {
         user.outputFile = contents['output-file'];
+    }
+    if (contents['excl-br-line']) {
+        user.exclBrLine = contents['excl-br-line'];
+    }
+    if (contents['excl-br-start']) {
+        user.exclBrStart = contents['excl-br-start'];
+    }
+    if (contents['excl-br-stop']) {
+        user.exclBrStop = contents['excl-br-stop'];
+    }
+    if (contents['excl-line']) {
+        user.exclLine = contents['excl-line'];
+    }
+    if (contents['excl-line-start']) {
+        user.exclLineStart = contents['excl-line-start'];
+    }
+    if (contents['excl-line-stop']) {
+        user.exclLineStop = contents['excl-line-stop'];
     }
 
     core.debug(`User configuration: ${JSON.stringify(user)}`);

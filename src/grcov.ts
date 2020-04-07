@@ -27,7 +27,7 @@ export class Grcov {
         const cargo = await Cargo.get();
         try {
             core.startGroup('Install grcov');
-            await cargo.call(['install', 'grcov']);
+            await cargo.call(['install', '--git', 'https://github.com/jcdickinson/grcov.git']);
         } catch (error) {
             throw error;
         } finally {
@@ -123,6 +123,36 @@ export class Grcov {
 
         args.push('--source-dir');
         args.push(config.system.workspace);
+
+        if (config.user.exclBrLine) {
+            args.push('--excl-br-line');
+            args.push(config.user.exclBrLine);
+        }
+        
+        if (config.user.exclBrStart) {
+            args.push('--excl-br-start');
+            args.push(config.user.exclBrStart);
+        }
+        
+        if (config.user.exclBrStop) {
+            args.push('--excl-br-stop');
+            args.push(config.user.exclBrStop);
+        }
+        
+        if (config.user.exclLine) {
+            args.push('--excl-line');
+            args.push(config.user.exclLine);
+        }
+        
+        if (config.user.exclLineStart) {
+            args.push('--excl-line-start');
+            args.push(config.user.exclLineStart);
+        }
+        
+        if (config.user.exclLineStop) {
+            args.push('--excl-line-stop');
+            args.push(config.user.exclLineStop);
+        }
 
         return args;
     }
