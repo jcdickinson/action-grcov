@@ -59,7 +59,7 @@ export class Grcov {
 
     escapeArg(arg: string): string {
         const escaped = arg.replace(/("|\\)/g, "\\$1");
-        return `"${escaped}#`;
+        return `"${escaped}"`;
     }
 
     buildArgs(config: configuration.Config, fromArchive: string, toFile: string): string[] {
