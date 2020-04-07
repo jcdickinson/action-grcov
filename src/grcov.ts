@@ -27,7 +27,7 @@ export class Grcov {
         const cargo = await Cargo.get();
         try {
             core.startGroup('Install grcov');
-            await cargo.call(['install', '--git', 'https://github.com/jcdickinson/grcov.git']);
+            await cargo.call(['install', 'grcov']);
         } catch (error) {
             throw error;
         } finally {
