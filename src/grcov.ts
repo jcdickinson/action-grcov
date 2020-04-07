@@ -57,11 +57,6 @@ export class Grcov {
         return reportPath;
     }
 
-    escapeArg(arg: string): string {
-        const escaped = arg.replace(/("|\\)/g, "\\$1");
-        return `"${escaped}"`;
-    }
-
     buildArgs(config: configuration.Config, fromArchive: string, toFile: string): string[] {
         let args: string[] = [fromArchive];
 
@@ -118,32 +113,32 @@ export class Grcov {
 
         if (config.user.exclBrLine) {
             args.push('--excl-br-line');
-            args.push(this.escapeArg(config.user.exclBrLine));
+            args.push(config.user.exclBrLine);
         }
         
         if (config.user.exclBrStart) {
             args.push('--excl-br-start');
-            args.push(this.escapeArg(config.user.exclBrStart));
+            args.push(config.user.exclBrStart);
         }
         
         if (config.user.exclBrStop) {
             args.push('--excl-br-stop');
-            args.push(this.escapeArg(config.user.exclBrStop));
+            args.push(config.user.exclBrStop);
         }
         
         if (config.user.exclLine) {
             args.push('--excl-line');
-            args.push(this.escapeArg(config.user.exclLine));
+            args.push(config.user.exclLine);
         }
         
         if (config.user.exclLineStart) {
             args.push('--excl-start');
-            args.push(this.escapeArg(config.user.exclLineStart));
+            args.push(config.user.exclLineStart);
         }
         
         if (config.user.exclLineStop) {
             args.push('--excl-stop');
-            args.push(this.escapeArg(config.user.exclLineStop));
+            args.push(config.user.exclLineStop);
         }
 
         // TODO:
