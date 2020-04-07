@@ -146,11 +146,11 @@ async function loadUser(path: string): Promise<User> {
     if (contents['excl-line']) {
         user.exclLine = contents['excl-line'];
     }
-    if (contents['excl-line-start']) {
-        user.exclLineStart = contents['excl-line-start'];
+    if (contents['excl-start']) {
+        user.exclLineStart = contents['excl-start'];
     }
-    if (contents['excl-line-stop']) {
-        user.exclLineStop = contents['excl-line-stop'];
+    if (contents['excl-stop']) {
+        user.exclLineStop = contents['excl-stop'];
     }
 
     core.debug(`User configuration: ${JSON.stringify(user)}`);

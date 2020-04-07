@@ -142,11 +142,11 @@ path-mapping:
   - "/path1"
   - "/path2"
 excl-br-line: "#\\[derive\\("
-excl-line: "#\\[derive\\("
 excl-br-start: "mod tests \\{"
 excl-br-stop: "EXAMPLE"
-excl-line-start: "mod tests \\{"
-excl-line-stop: "EXAMPLE"
+excl-line: "#\\[derive\\("
+excl-start: "mod tests \\{"
+excl-stop: "EXAMPLE"
 ```
 
 ## Notes

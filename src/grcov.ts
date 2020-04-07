@@ -111,19 +111,6 @@ export class Grcov {
             args.push(config.user.prefixDir);
         }
 
-        // TODO:
-        // args.push('--service-job-number');
-        // args.push('');
-
-        args.push('--service-name');
-        args.push(config.system.serviceName);
-
-        // args.push('--service-number');
-        // args.push('');
-
-        args.push('--source-dir');
-        args.push(config.system.workspace);
-
         if (config.user.exclBrLine) {
             args.push('--excl-br-line');
             args.push(config.user.exclBrLine);
@@ -145,14 +132,27 @@ export class Grcov {
         }
         
         if (config.user.exclLineStart) {
-            args.push('--excl-line-start');
+            args.push('--excl-start');
             args.push(config.user.exclLineStart);
         }
         
         if (config.user.exclLineStop) {
-            args.push('--excl-line-stop');
+            args.push('--excl-stop');
             args.push(config.user.exclLineStop);
         }
+
+        // TODO:
+        // args.push('--service-job-number');
+        // args.push('');
+
+        args.push('--service-name');
+        args.push(config.system.serviceName);
+
+        // args.push('--service-number');
+        // args.push('');
+
+        args.push('--source-dir');
+        args.push(config.system.workspace);
 
         return args;
     }
